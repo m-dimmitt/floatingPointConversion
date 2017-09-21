@@ -1,16 +1,13 @@
 .express 11.5 as a float using SIC/XE
 .first as a decimal, then as a float.
-PARTTHREE start 100
+PARTTHREE START 100
 
-LDS #11
+LDA #50 	.A <-- 50 (decimal) .A's value is .50 
+CLEAR A 	.A <-- 0            .does this clear need to be here?
 
-SICXE-DEMO START 100 
-LDA #50 	.A <-- 50 (decimal) 
-CLEAR A 	.A <-- 0 
-
-LDS #1 	.S <-- 1 
-ADDR A,S 	.S <-- (S) + (A) 
-FLOAT S 	.S(F) <-- S(A)
-
+LDS #11 	.S <-- 11           .S's value is 11
+ADDR A,S 	.S <-- (S) + (A)    .S's value is 11.5
+STS Q                         .Q's value is 11.5
+FLOAT Q 	.S(F) <-- S(A)      .Q's value is 11.5(float)
 
 END PARTTHREE
