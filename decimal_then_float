@@ -3,11 +3,11 @@
 PARTTHREE START 100
 
 LDA #50 	.A <-- 50 (decimal) .A's value is .50 
-CLEAR A 	.A <-- 0            .does this clear need to be here?
+CLEAR A 	.A <-- 0            .clear the acumulator?
 
 LDS #11 	.S <-- 11           .S's value is 11
-ADDR A,S 	.S <-- (S) + (A)    .S's value is 11.5
-STS Q                         .Q's value is 11.5
+ADDR A,S 	.S <-- (S) + (A)    .S's value is 11.5 but this should be in the accumulator.
+STA Q     .Q <-- (S)          .Q's value is 11.5 brought in from the accumulator
 FLOAT Q 	.S(F) <-- S(A)      .Q's value is 11.5(float)
 
 END PARTTHREE
